@@ -1,0 +1,204 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  display: flex; /* Added to center the carousel content */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  flex-direction: column; /* Stacks items vertically */
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+  display: flex;
+  justify-content: center; /* Centers image within the item */
+  align-items: center; /* Centers text within the item */
+  flex-direction: column; /* Ensures text and image are vertically aligned */
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb { 
+  font-size: smaller;
+}
+
+/* Footer Signature with Centered Text and Right-Aligned Button */
+.footer-signature {
+  position: fixed; /* Fixes the footer at the bottom of the page */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds some padding for spacing */
+  font-size: 14px; /* Adjusts the font size */
+  color: #00fc0d; /* Sets the text color */
+  background-color: #474747; /* Adds a background color to differentiate the footer */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the signature text */
+  align-items: center; /* Center items vertically */
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  right: 20px; /* Aligns the button to the right */
+}
+
+.dark-mode-toggle .button {
+  background-color: #007906; /* Optional: Set a background color for the button */
+  color: #fff; /* Optional: Set the text color for the button */
+  border: none;
+  cursor: pointer;
+}
+
+.dark-mode-toggle .button:hover {
+  background-color: #363636; /* Darker shade on hover */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .footer-signature {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode .results-carousel .item {
+  background-color: #333;
+}
+
+.dark-mode .link-block a,
+.dark-mode .publication-authors a {
+  color: #bb86fc !important;
+}
+
+.dark-mode .button.is-dark {
+  background-color: #6200ea;
+  border-color: #6200ea;
+}
+
+.dark-mode .slider-pagination .slider-page {
+  background: #bb86fc;
+}
+
+/* Additional elements like headers, footers, links, etc. */
+
+

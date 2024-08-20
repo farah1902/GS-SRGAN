@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>GS-SRGAN: Enhancing Spatial Resolution of Sentinel-2 Imagery
+    through Deep Learning and Generative Adversarial Networks</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">  
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/bul-slider.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- <style>
+    .hero.is-small1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Ensures the section takes up the full height of the viewport */
+}
+
+.hero-body1 {
+    width: 100%;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stacks items vertically */
+}
+
+.carousel1.results-carousel1 .item1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Adds space between items */
+}
+
+.carousel1.results-carousel1 img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto;
+    margin-bottom: 10px; /* Adds space between the image and the text */
+}
+
+.subtitle1 {
+    margin-top: 10px;
+}
+
+</style> -->
+
+</head>
+<body >
+
+<!--   <div class="dark-mode-toggle">
+    <button id="dark-mode-button" class="button is-small is-rounded">Dark Mode</button>
+  </div> -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title"><span style="color: rgb(38, 226, 1); font-size: 1.2em;">GS-SRGAN:</span> Enhancing Spatial Resolution of Sentinel-2 Imagery through Deep Learning and Generative Adversarial Networks</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://saadfrh.github.io/" target="_blank">Saad Farah ¹</a><sup> *</sup>,</span>
+                <span class="author-block">
+                  <a href="https://www.researchgate.net/profile/Hassan-Rhinane" target="_blank">Hassan Rhinane ¹</a>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/hachem-saadaoui/" target="_blank">Hachem Saadaoui ²</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">¹ University Hassan II, Faculty of Science Aïn Chock, Department of Geology, Geoscience
+                      Laboratory, Casablanca, Morocco</span><br>
+                    <span class="author-block">² Green Energy Park, Ben Guerir, Morocco</span>
+                    <hr>
+                    <span class="email-block"><a href="mailto:saad1902farah@gmail.com">saad1902farah@gmail.com</a></span>
+<!--                     <span class="author-block">KTH Royal Institue of Technology<br>Conferance name and year</span> -->
+<!--                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/SR_abstract_14-Aug-2024.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified" style="width: 100%;">
+          <p>
+            Sentinel-2 satellites produce multi-spectral optical images, including four
+bands with a high spatial resolution. Thanks to their open data access
+policy, these images have become an essential resource for an extensive
+variety of uses. Sentinel-2 is renowned for its cost-free access, extensive
+spatial coverage, and high temporal revisit frequency, generating multispectral images with 13 bands at resolutions of 10, 20, and 60 m/pixel.
+Nonetheless, the growing need for high-resolution images has highlighted
+the significance of super-resolution technology (SR), which improves
+spatial detail through enhanced sensor precision and density. While
+Google Earth offers high-resolution images from various sources,
+obtaining such high-resolution spatial imagery (VHSR), typically less
+than 1 m, directly from satellite providers can be prohibitively expensive
+for multi-temporal analysis in large and extensive areas. To make the most
+of the free Sentinel-2 images, deep learning techniques are a good solution
+for improving single images. To harness the freely available Sentinel-2
+imagery, deep learning techniques have emerged as a viable solution for
+super-resolution of a single image tasks, enhancing Low-resolution
+images (LR) are enhanced by retrieving fine-grained high-frequency
+details resulting in high-resolution (HR) images enhanced through superresolution techniques. In this research, we propose an enhancement of
+single-image resolution model derived from a Generative Adversarial
+Network, commonly abbreviated as GAN. We implemented and trained a
+model, named <b>GS-SRGAN</b> (Google Sentinel - SRGAN), built on the
+foundation of the Super-Resolution GAN model (SRGAN), using pairs of
+Google Earth and Sentinel-2 images for generating super-resolved outputs
+of the RGB bands from the multispectral Sentinel-2 data using a 4x scaling
+factor. The results from our <b>GS-SRGAN</b> model surpass those of current
+best in class models when evaluated using standard metrics such as SSIM
+and PSNR, enabling the super-resolved Sentinel-2 imagery for use in
+studies that demand very high spatial resolution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<iframe
+  src="https://huggingface.co/datasets/farahsaad/satellite_HR_LR_dataset/embed/viewer/default/train"
+  frameborder="0"
+  width="100%"
+  height="560px"
+></iframe>
+
+
+<!-- Image carousel -->
+<section class="hero is-small" styele="">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static\images\table_senti_wavebands.png" alt="MY ALT TEXT"/>
+        <hr>
+        <h4 class="subtitle has-text-centered">
+          Table 1:Technical Specifications of Sentinel-2's Spectral Bands in the Visible and the Near-Infrared Spectrum
+        </h4>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static\images\cities.png" alt="MY ALT TEXT"/>
+        <hr>
+        <h2 class="subtitle has-text-centered">
+          High-Resolution Satellite Imagery from Google and Bing Basemaps for Various Cities
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static\images\data_prepa.png" alt="MY ALT TEXT"/>
+        <hr>
+        <h2 class="subtitle has-text-centered">
+          Super-Resolution Image Processing and Dataset Creation
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\2x2.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Visualizing 2x2 to 8x8 Pixel Upsampling
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\pairs.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        High-Resolution and Low-Resolution Satellite Image Pairs 
+      </h2>
+    </div>
+
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\gs_srgan_archi.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Google-Sentinel Super-Resolution Generative Adversarial Network (GS-SRGAN) architecture
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\generator.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        GS-SRGAN Generator Architecture for Super-Resolution
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\descriminator.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        GS-SRGAN Discriminator Architecture with Real and Generated Image Pair Evaluation
+      </h2>
+    </div>
+
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\vgg16.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        VGG16 Convolutional Neural Network Architecture Diagram
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\vgg19.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        VGG19 Convolutional Neural Network Architecture Diagram
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\loss_with_lrdecay.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Training Progress with Learning Rate Decay
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\ssim_with_lrdecay.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Image Quality Metrics with Learning Rate Decay
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\loss_without_lrdecay.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Training Progress without Learning Rate Decay
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\ssim_without_lrdecay.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Image Quality Metrics without Learning Rate Decay
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\result1.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Results and Visual Comparison of Images Quality
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\result2.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Results and Visual Comparison of Images Quality
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static\images\diccussion.png" alt="MY ALT TEXT"/>
+      <hr>
+      <h2 class="subtitle has-text-centered">
+        Comparison of Losses and Metrics Between Training Results With and Without Learning Rate Decay
+      </h2>
+    </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+<section class="section hero" style="padding: 0;">
+  <div class="columns is-centered has-text-centered" style="width: 100%; margin: 0;">
+    <div class="column is-full">
+      <h2 class="title is-3">Sentinel-2/Google Imagery Visualization</h2>
+      <iframe allowfullscreen scrolling="yes" src="https://imgsli.com/Mjg4MDAx" 
+        style="width: 100%; border: 0px none; height: 90vmin; min-height: 410px; margin-top: 0px; margin-bottom:15px;"> 
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- Inline JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      var slider = document.getElementById('resizer');
+      var beforeImage = document.getElementById('before-image');
+      var afterImage = document.getElementById('after-image');
+      var isDown = false;
+
+      slider.addEventListener('mousedown', function () {
+          isDown = true;
+      });
+
+      document.addEventListener('mouseup', function () {
+          isDown = false;
+      });
+
+      document.addEventListener('mousemove', function (e) {
+          if (!isDown) return;
+
+          var xPos = e.clientX - slider.offsetWidth / 2;
+          var containerWidth = slider.parentElement.offsetWidth;
+
+          if (xPos < 0) xPos = 0;
+          if (xPos > containerWidth) xPos = containerWidth;
+
+          slider.style.left = xPos + 'px';
+          beforeImage.style.width = xPos + 'px';
+      });
+  });
+</script>
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code to be updated </code></pre>
+    </div>
+</section>
+<script src="static/js/bul-slider.js"></script>
+
+<footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              <b>Note:</b> All links will be updated after the public release of the dataset.
+            </p>
+                                <p>
+                                  Saad Farah, Hassan
+                    Rhinane, Hachem Saadaoui.<br> (2024) GS-SRGAN:
+                    Enhancing Spatial Resolution of Sentinel-2
+                    Imagery through Deep Learning and Generative
+                    Adversarial Networks, Journal of Geoscience, Vol.
+                    X, No. Y, pp. **-**.<br>
+                    DOI: 10.xxxx/xxxxxx.<br><br>
+                    Received: *** **, ***<br>
+                    Accepted: *** **, ***<br>
+                    Published: *** **, ***<br>
+                    Copyright © 2024 by author(s) and Green Energy Park. This work is licensed under
+                    the Creative Commons Attribution
+                    International License (CC BY 4.0).<br>
+                    <a>http://creativecommons.org/licenses/by/4.0/</a>
+                    </p>
+<!-- Image Section -->
+<div class="columns is-centered">
+  <div class="column is-4">
+    <img src="static\images\licence.png" alt="Creative Commons Logo" style="max-width: 200%; height: 40px;">
+</div>
+    <div class="column is-4">
+        <img src="static\images\open_src.png" alt="Open Access Logo" style="max-width: 100%; height: 40px;">
+    </div>
+
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-signature">
+      <p>Created by: 𝕾𝖆𝖆𝖉 𝕱𝖆𝖗𝖆𝖍 (ㆆᴗㆆ)</p>
+      <div class="dark-mode-toggle">
+        <button id="dark-mode-button" class="button is-small is-rounded">Dark Mode</button>
+      </div>
+    </div>
+  </footer>
+  <script src="static/js/ba-slider.js"></script>
+  
+
+</body>
+</html>
